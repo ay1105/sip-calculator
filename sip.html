@@ -1,0 +1,86 @@
+<!DOCTYPE html> <!--some formula and tags are taken from google for the help-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP Calculator | Black & Red Theme</title>
+    <link rel="stylesheet" href="sip.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>SIP Calculator</h1>
+            <p>Calculate returns on your Systematic Investment Plan (SIP)</p>
+        </header>
+
+        <div class="calculator-container">
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="monthly-investment">Monthly Investment (₹)</label>
+                    <input type="number" id="monthly-investment" min="500" max="1000000" step="500" value="5000">
+                    <input type="range" id="monthly-investment-range" min="500" max="1000000" step="500" value="5000">
+                    <div class="value-display">
+                        <span>₹500</span>
+                        <span>₹10,00,000</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="investment-period">Investment Period (Years)</label>
+                    <input type="number" id="investment-period" min="1" max="40" step="1" value="10">
+                    <input type="range" id="investment-period-range" min="1" max="40" step="1" value="10">
+                    <div class="value-display">
+                        <span>1 Year</span>
+                        <span>40 Years</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="return-rate">Expected Return Rate (% p.a.)</label>
+                    <input type="number" id="return-rate" min="1" max="30" step="0.1" value="12">
+                    <input type="range" id="return-rate-range" min="1" max="30" step="0.1" value="12">
+                    <div class="value-display">
+                        <span>1%</span>
+                        <span>30%</span>
+                    </div>
+                </div>
+
+                <button id="calculate-btn">Calculate</button>
+            </div>
+
+            <div class="calculator-result">
+                <div class="result-summary">
+                    <h2 id="maturity-value">₹0</h2>
+                    <p>Estimated Value</p>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart" id="returns-chart">
+                        <!-- Chart bars will be added dynamically -->
+                    </div>
+                </div>
+
+                <div class="result-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Invested Amount</span>
+                        <span class="detail-value" id="invested-amount">₹0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Estimated Returns</span>
+                        <span class="detail-value" id="estimated-returns">₹0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Total Value</span>
+                        <span class="detail-value" id="total-value">₹0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="sip.js"></script>
+</body>
+
+</html>
